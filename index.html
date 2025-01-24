@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prachi's Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Countdown -->
+        <h1 class="fade-text">
+            <span>I</span>
+            <span> </span>
+            <span>L</span>
+            <span>o</span>
+            <span>v</span>
+            <span>e</span>
+            <span> </span>
+            <span>P</span>
+            <span>r</span>
+            <span>a</span>
+            <span>c</span>
+            <span>h</span>
+            <span>i</span>
+        </h1>
+        <h2 id="countdown">Countdown to your birthday: 
+            <span id="days">0</span> days 
+            <span id="hours">0</span> hours 
+            <span id="minutes">0</span> minutes 
+            <span id="seconds">0</span> seconds
+        </h2>
+
+        <!-- Reason Section (Only Reason 29) -->
+        <div class="reason-list" id="reason-list">
+            <!-- Reason 29 will be added manually here -->
+            <div class="reason">
+                <h3>Reason 28: Proud Moment: You Secured Your SIP</h3>
+                <p> Today, you secured your SIP, and I couldn't be prouder! Your dedication and hard work inspire me every single day. Watching you achieve your dreams makes me so happy, and it reminds me of how amazing you are. You truly deserve every bit of success coming your way. I’m so lucky to have someone as driven and accomplished as you in my life! ❤️</p>
+            </div>
+        </div>
+
+        <!-- Bouncing Heart -->
+        <div id="bouncing-heart">❤️</div>
+
+        <!-- Surprise Button -->
+        <button id="surprise-button" onclick="showSurprise()">Click for Surprise</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Countdown Timer Script
+        function updateCountdown() {
+            const birthday = new Date('2025-02-21T00:00:00'); // Set Prachi's birthday
+            const now = new Date();
+            const diff = birthday - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            // Update countdown
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000); // Update every second
+
+        // Function to show a surprise message
+        function showSurprise() {
+            alert("You are my everything, Prachi! 💕");
+        }
+    </script>
+</body>
+</html>
